@@ -1,0 +1,19 @@
+<h1>Hero squad!</h1>
+#if ($HeroSquads)
+  <ul>
+    #foreach ($HeroSquad in $HeroSquads)
+       <li>$HeroSquad.getDescription()</li>
+    #end
+   <ul>
+#else
+  <p>No Squad!</p>
+#end
+
+<p>New squad:</p>
+
+<form action="/HeroSquad" method="post">
+  <label for="description">Hero Description</label>
+  <input id="description" name="description" type="text">
+
+   <button type="submit" class="btn btn-default">Add Squad</button>
+</form>
