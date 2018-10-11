@@ -2,13 +2,13 @@ import static spark.Spark.*;
 import java.util.HashMap;
 import java.util.Map;
 import spark.ModelAndView;
-//import spark.template.velocity.VelocityTemplateEngine;
+import spark.template.velocity.VelocityTemplateEngine;
 
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
         String layout = "templates/layout.vtl";
-//heroku
+////heroku
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
         if (process.environment().get("PORT") != null) {
@@ -18,7 +18,7 @@ public class App {
         }
 
         setPort(port);
-//end heroku
+////end heroku
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -40,4 +40,3 @@ public class App {
 
     }
 }
-// "<p><a href='/heros' >P.S. Check out my hero photos here.</a></p>" +
