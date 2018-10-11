@@ -14,4 +14,16 @@ public class HeroTest {
         Hero myHero= new Hero("Super-Man, ultimate strength, kryptonite");
         assertEquals("Super-Man, ultimate strength, kryptonite", myHero.getDescription());
     }
+
+    @Test
+    public void HeroSquad_instantiatesCorrectly_true() {
+        HeroSquad myHeroSquad = new HeroSquad("Avegers, 10, Human destruction");
+        assertEquals(true, myHeroSquad instanceof HeroSquad);
+    }
+
+    @Test
+    public void HeroSquad_instantiatesWithDescription_String() {
+        HeroSquad myHeroSquad= new HeroSquad("Avegers, 10, Human destruction");
+        assertEquals("", myHeroSquad.getDescription());
+    }
 }
